@@ -40,3 +40,30 @@ const refactoredCuboid = new RefactoredCuboidMaker({
 
 // Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
 
+class CubeMaker extends RefactoredCuboidMaker {
+  constructor(object){
+    super(object);
+    this.length = object.edge;
+    this.width = object.edge;
+    this.height = object.edge;
+    this.edge = object.edge;
+  }
+  spaceDiagonal(){
+    return Math.sqrt((this.length*this.length)+(this.width*this.width)+(this.height*this.height));
+  }
+  surfaceArea(){
+    return 6*Math.pow(this.edge,2);
+  }
+  volume(){
+    return Math.pow(this.edge,3);
+  }
+}
+
+/*In geometry a space diagonal (also interior diagonal or body diagonal) of a polyhedron is a line connecting two vertices that are not on the same face. Space diagonals contrast with face diagonals, which connect vertices on the same face (but not on the same edge) as each other.*/
+
+const cube = new CubeMaker({
+  edge: 4
+})
+console.log(cube.spaceDiagonal());
+console.log(cube.surfaceArea());
+console.log(cube.volume());
