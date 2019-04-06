@@ -8,24 +8,31 @@
 */
 
 
+let consume = (x,y,cb)=>cb(x,y);
+
+console.log(consume(1,100,(x,y)=>x+y));
+
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+let add = (x,y)=>console.log(x+y);
+let multiply = (x,y)=>console.log(x*y);
+let greeting = (x,y)=>console.log(`Hello ${x} ${y}, nice to meet you!`);
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+ consume(2,2,add); // 4
+ consume(10,16,multiply); // 160
+ consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: A closure is formed between a function and its lexical environment. In this case, nestedFunction's lexical environment includes the call to console.log and the initialized variable named internal. In closures, a nested unction can take things from its lexical environment, or the things in the scope in which it was called. The reverse is not true, as in, the parent function myFunction, has no access to anything initialized within nestedFunction.
 
 
 const external = "I'm outside the function";
