@@ -29,14 +29,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. Describe the biggest difference between `.forEach` & `.map`.
+- The array methods forEach() and map() differ mainly in the way they provide an output from the given array. forEach takes a callback function which can then be applied to every item in the given array, and returns something for each individual item. map takes a callback, applies it to each item in the given array, then returns a new array of the items post-processing.
 
 2. What is the difference between a function and a method?
+- Methods are a type of function, except that methods are specifically properties of an object. Functions in general don't need to be properties of an object. When invoked, methods are called by using dot notation, whereas regular functions are invoked solely by adding a parenthesis after their names.
 
 3. What is closure?
+- To understand closure, we first need to define the environment wherein all JavaScript code lives. When initiated or defined outside of function or curly brace block, depending on whether the variable is defined by let, const or var, a variable is created in the global scope. When a function is defined, it create's it's own scope bookended by curly braces. The objects, variables and functions within which it was defined, and the function's name and inner content of the curly braces is a closure. The function can use the variables defined right outside of its curly braces. This is called the lexical environment. To explain less verbosely, a closure is a function along with its lexical environment.
 
 4. Describe the four rules of the 'this' keyword.
+- The this keyword is used in four different contexts: implicit binding, explicit binding, New binding and Window binding. When an object is defined in the global context, this points to the Window object wherein which all JavaScript is executed in the browser. This is Window Binding. In New binding, this refers to a newly created object made from a constructor function using the new keyword. In explicit binding, an object can take on the properties of another object if we apply call(), apply() or bind() to it, and then this points to the object we bound our first function to. In implicit binding, this points to the object within which it is used from.
 
 5. Why do we need super() in an extended class?
+
+- When we're using the classes prototype pattern structure, we will sometimes need an object to inherit the properties of a parent class. For example, a Mammal class would have some basic properties like weight and height. Any new Humans we create from that class should also have weight and height as properties, with additional unique properties like language and career. To give new Humans the Mammal properties we would use super(person); when extending the Mammal property for Humans.
 
 ## Project Set up
 
